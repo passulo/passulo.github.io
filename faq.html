@@ -1,0 +1,30 @@
+---
+layout: default
+title: FAQ
+permalink: /faq/
+menu: faq
+lang: site.data["active_lang"]
+---
+
+<div class="container col-xxl-8 px-4 py-5">
+    <div class="align-items-center g-5 py-5">
+        <h1 class="mb-5">Frequently Asked Questions</h1>
+        {%- for faq in site.faq -%}
+
+        <div class="card mb-5">
+            <div class="row g-0">
+                <div class="col-md-8">
+                    <div class="card-body">
+                        {{ faq.content }}
+                    </div>
+                </div>
+                {% if faq.image %}
+                <div class="col-md-4">
+                    <img src="{{ faq.image }}" class="img-fluid rounded-start float-end" width="200" alt="Screenshot"/>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+        {%- endfor -%}
+    </div>
+</div>

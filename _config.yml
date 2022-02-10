@@ -1,0 +1,63 @@
+url: "https://www.passulo.com" # for robots, sitemap
+baseurl: ""
+name: "Passulo"
+
+
+plugins:
+  - jekyll-sitemap
+  - jekyll-polyglot
+#  - jekyll-feed # RSS feed for posts
+
+languages: [ "en", "de" ]
+default_lang: "de"
+exclude_from_localization: [ "images", "css", "favicon.ico", "apple-touch-icon.png" ]
+parallel_localization: true
+lang_from_path: true
+highlighter: rouge
+
+collections:
+  - changelog
+  - faq
+
+menu:
+  home:
+    de: Home
+    en: Home
+#  changes:
+#    de: Neuerungen
+#    en: Change Log
+#  privacy:
+#    de: Datenschutz
+#    en: Privacy
+#  faq:
+#    de: Fragen & Antworten
+#    en: FAQ
+  download:
+    de: Download
+    en: Download
+#  language:
+#    de: Deutsch
+#    en: English
+
+# Exclude from processing.
+# The following items will not be processed, by default.
+# Any item listed under the `exclude:` key here will be automatically added to
+# the internal "default list".
+#
+# Excluded items can be processed by explicitly listing the directories or
+# their entries' file path in the `include:` list.
+#
+exclude:
+  - website.iml
+  - .gitignore
+  - .idea
+#   - .sass-cache/
+#   - .jekyll-cache/
+#   - gemfiles/
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules/
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/

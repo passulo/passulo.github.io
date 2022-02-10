@@ -1,0 +1,40 @@
+---
+layout: default
+menu: home
+---
+
+{% assign hero = site.data.features.hero[site.active_lang] %}
+<div class="container col-xxl-8 px-4 py-5">
+    <div class="row flex-lg-row align-items-center g-5 py-5">
+        <div class="col-10 col-sm-8 col-lg-6">
+            <img src="{{ site.url }}/images/{{ hero.image }}" class="d-block mx-lg-auto img-fluid" alt="" width="300" height="300">
+        </div>
+        <div class="col-lg-6">
+            <img class="d-grid gap-2 mb-3 d-md-flex justify-content-md-start logo" src="/logo.png" alt="Logo" width="150" height="150">
+            <h1 class="display-5 fw-bold lh-1 mb-2">{{ hero.title }}</h1>
+            <p class="lead">{{ hero.subtitle }}</p>
+            <div class="d-grid gap-2 mt-5 d-md-flex justify-content-md-start">
+                <a href="https://testflight.apple.com/join/AY4jjXAG">
+                    <img src="{{ site.url }}/images/appstore.{{site.active_lang}}.svg" alt="Download on the App Store">
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container px-4 py-5 bg-secondary" id="featured-3">
+    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+        {% for feature in site.data.features.features %}
+        <div class="feature col">
+            <div class="mb-3">
+                <img src="{{ site.url }}/images/{{ feature[site.active_lang].image }}" alt="{{ feature[1][site.active_lang].title }}" width="250">
+            </div>
+            <h2>{{ feature[site.active_lang].title }}</h2>
+            <p>{{ feature[site.active_lang].desc }}</p>
+            {% if feature[site.active_lang].link %}
+            <a href="{{ feature[site.active_lang].link.href }}" class="icon-link">{{ feature[site.active_lang].link.text }}</a>
+            {% endif %}
+        </div>
+        {%- endfor -%}
+    </div>
+</div>

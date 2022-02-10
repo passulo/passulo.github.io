@@ -1,0 +1,11 @@
+---
+title:  "Version 5.1"
+date:   2022-02-09 12:00:00 +0100
+lang: de
+---
+
+Diese Version enthält ein paar Kleinigkeiten:
+- Das "Importieren"-Menü war zu aufdringlich. Es wurde in seine Schranken verwiesen.
+- Wenn man einen Laden sucht, wird die Tastatur direkt aktiviert.
+- In der Laden-Suche werden kluge Vorschläge aus der Vergangenheit gemacht.
+- Bons aus dem Jahr 2219 und ähnlich weit in der Zukunft werden ins Jahr 2022 zurück geworfen.

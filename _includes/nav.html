@@ -1,0 +1,40 @@
+<nav class="navbar sticky-top navbar-expand-sm navbar-light bg-body border-bottom">
+    <div class="container-lg">
+        <a class="navbar-brand" href="{{ site.url }}">
+            <img src="{{ "/logo.png" | relative_url }}" alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
+            {{ site.name }}
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse nav justify-content-end" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item me-2">
+                    <a class="nav-link {% if page.menu == "home" %} active {% endif %}" aria-current="page" href="/">{{ site.menu["home"][site.active_lang] }}</a>
+                </li>
+                <li class="nav-item me-2">
+                    <a class="nav-link {% if page.menu == "changelog" %} active {% endif %}" href="/changelog/">{{ site.menu["changes"][site.active_lang] }}</a>
+                </li>
+                <li class="nav-item me-2">
+                    <a class="nav-link {% if page.menu == "privacy" %} active {% endif %}" href="/privacy/">{{ site.menu["privacy"][site.active_lang] }}</a>
+                </li>
+                <li class="nav-item me-2">
+                    <a class="nav-link {% if page.menu == "faq" %} active {% endif %}" href="/faq/">{{ site.menu["faq"][site.active_lang] }}</a>
+                </li>
+                <li class="nav-item me-2">
+                    <a class="nav-link" href="https://testflight.apple.com/join/AY4jjXAG">{{ site.menu["download"][site.active_lang] }}</a>
+                </li>
+                <li class="nav-item me-2 dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="bi-globe"></i> {{ site.menu["language"][site.active_lang] }}
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <li><a class="dropdown-item" {% static_href %}href="{{site.baseurl}}{{page.url}}"{% endstatic_href %}>Deutsch</a></li>
+                        <li><a class="dropdown-item" {% static_href %}href="{{site.baseurl}}/en{{page.url}}"{% endstatic_href %}>English</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

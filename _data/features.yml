@@ -1,0 +1,9 @@
+hero:
+  de:
+    image: pass.png
+    title: Passulo
+    subtitle: Einfach, sicher, datensparsam.
+  en:
+    image: pass.png
+    title: Passulo
+    subtitle: Simple, secure, privacy-friendly.

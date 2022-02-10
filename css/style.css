@@ -1,0 +1,34 @@
+:root {
+    --bs-secondary-rgb: rgb(233, 233, 233);
+    --bs-bg-opacity: 1.0;
+    --bs-body-bg: rgb(238, 246, 254);
+}
+
+
+@media (prefers-color-scheme: dark) {
+
+    body {
+        background-color: rgb(2, 44, 87);
+        color: rgb(238, 246, 254);
+    }
+
+    .card {
+        background-color: rgb(33, 72, 112);
+    }
+
+    .navbar, .bg-body {
+        background-color: rgb(33, 72, 112) !important;
+    }
+
+    .navbar-light .navbar-nav .nav-link, .navbar-light .navbar-brand {
+        color: rgb(238, 246, 254);
+    }
+}
+
+.logo {
+    border-radius: 20%;
+}
+
+:target {
+    scroll-margin-top: 80px;
+}
