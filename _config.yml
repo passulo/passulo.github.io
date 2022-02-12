@@ -1,7 +1,7 @@
 url: "https://www.passulo.com" # for robots, sitemap
 baseurl: ""
 name: "Passulo"
-
+destination: docs/
 
 plugins:
   - jekyll-sitemap
