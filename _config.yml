@@ -2,6 +2,7 @@ url: "https://www.passulo.com" # for robots, sitemap
 baseurl: ""
 name: "Passulo"
 destination: docs/
+appstore: https://testflight.apple.com/join/pvKITed6
 
 plugins:
   - jekyll-sitemap
@@ -10,7 +11,7 @@ plugins:
 
 languages: [ "en", "de" ]
 default_lang: "de"
-exclude_from_localization: [ "images", "css", "favicon.ico", "apple-touch-icon.png" ]
+exclude_from_localization: [ "images", "css", "favicon.ico", "apple-touch-icon.png", "docs" ]
 parallel_localization: true
 lang_from_path: true
 highlighter: rouge
