@@ -123,7 +123,23 @@ Es ist deshalb darauf zu achten, die Gesamtgröße des Tokens nicht unnötig auf
 
 <h3 id="signatur">Signatur</h3>
 
+<p>Der <code class="language-plaintext highlighter-rouge">sig</code> Parameter ist die <code class="language-plaintext highlighter-rouge">base64url</code> codierte Ed25519 Signatur über die Byte-Repräsentation des Tokens.</p>
+
+<p>Ed25519 ist in den meisten Programmiersprachen bereits verfügbar, 
+in Java ab Version 15 (in <code class="language-plaintext highlighter-rouge">java.security.Signature</code>), in Swift ab iOS 13 (in <code class="language-plaintext highlighter-rouge">CryptoKit.Curve25519</code>).</p>
+
+<p>Alternativ stell <a href="https://libsodium.gitbook.io/doc/bindings_for_other_languages">libsodium</a> Bindings für fast jede Sprache bereit.</p>
+
 <h3 id="key-id">Key-ID</h3>
+
+<p>Der <code class="language-plaintext highlighter-rouge">kid</code> (für key-id) Parameter ist der Klartext-Name des Public Keys der ausstellenden Organisation. 
+Unter diesem Identifier stellt der Passulo-Server (hinter der jeweiligen URL) den Key sowie die im Token erlaubten Namen bereit.</p>
+
+<h3 id="server-url">Server-URL</h3>
+
+<p>In der “Chain of Trust” bauen alle Schritte aufeinander auf, sodass die Client-Applikation am Ende nur noch dem Server in der URL des QR-Codes vertrauen muss.
+Hierfür bietet es sich an, entweder eine feste Liste an Servern, denen vertraut wird, auszuliefern, oder den Benutzer des Clients darauf hinzuweisen,
+welcher Server benutzt wird.</p>
 
     </div>
 </div>

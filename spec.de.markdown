@@ -53,4 +53,20 @@ memberSince {
 
 ### Signatur
 
+Der `sig` Parameter ist die `base64url` codierte Ed25519 Signatur über die Byte-Repräsentation des Tokens.
+
+Ed25519 ist in den meisten Programmiersprachen bereits verfügbar, 
+in Java ab Version 15 (in `java.security.Signature`), in Swift ab iOS 13 (in `CryptoKit.Curve25519`).
+
+Alternativ stell [libsodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages) Bindings für fast jede Sprache bereit.
+
 ### Key-ID
+
+Der `kid` (für key-id) Parameter ist der Klartext-Name des Public Keys der ausstellenden Organisation. 
+Unter diesem Identifier stellt der Passulo-Server (hinter der jeweiligen URL) den Key sowie die im Token erlaubten Namen bereit.
+
+### Server-URL
+
+In der "Chain of Trust" bauen alle Schritte aufeinander auf, sodass die Client-Applikation am Ende nur noch dem Server in der URL des QR-Codes vertrauen muss.
+Hierfür bietet es sich an, entweder eine feste Liste an Servern, denen vertraut wird, auszuliefern, oder den Benutzer des Clients darauf hinzuweisen,
+welcher Server benutzt wird.
