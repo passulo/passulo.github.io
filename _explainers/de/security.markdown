@@ -12,5 +12,5 @@ Beim Auslesen der Daten wird der öffentliche Schlüssel vom Server geladen und 
 
 Die Signatur nutzt Public-Key-Kryptografie mit EdDSA-Signaturen.
 
-<a class="btn btn-outline-primary" href="/spec" role="button" target="_blank">
+<a class="btn btn-outline-primary" href="/spec" role="button">
 <span class="iconify-inline" data-icon="ic:outline-file-copy"></span> Zur Spezifikation</a>
