@@ -8,7 +8,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Passulo</title>
-  <meta name="apple-itunes-app" content="app-id=1609117532">
+  <meta name="apple-itunes-app" content="app-id=1610341734">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="icon" href="/logo.png" type="image/svg+xml" sizes="any">
   <meta property="og:title" content="Passulo">
@@ -27,6 +27,7 @@
   <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="/css/github.css">
   <script src="https://cdn.jsdelivr.net/npm/anchor-js/anchor.min.js"></script>
+  <script src="https://code.iconify.design/2/2.1.2/iconify.min.js"></script>
 </head>
 <body><nav class="navbar sticky-top navbar-expand-sm navbar-light bg-body border-bottom">
     <div class="container-lg">
@@ -44,16 +45,24 @@
                     <a class="nav-link  active " aria-current="page" href="/">Home</a>
                 </li>
                 <li class="nav-item me-2">
-                    <a class="nav-link " href="/changelog/"></a>
+                    <a class="nav-link " href="/architecture/">Architektur</a>
                 </li>
                 <li class="nav-item me-2">
-                    <a class="nav-link " href="/privacy/"></a>
+                    <a class="nav-link " href="/spec/">Spezifikation</a>
                 </li>
                 <li class="nav-item me-2">
-                    <a class="nav-link " href="/faq/"></a>
+                    <a class="nav-link " href="/faq/">Fragen & Antworten</a>
                 </li>
-                <li class="nav-item me-2">
-                    <a class="nav-link" href="https://testflight.apple.com/join/pvKITed6">Download</a>
+                <li class="nav-item me-2 dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink2" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <span class="iconify-inline" data-icon="ic:outline-apps"></span> Software
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink2">
+                        <li><a class="dropdown-item" href="https://github.com/passulo/PassCreator">PassCreator</a></li>
+                        <li><a class="dropdown-item" href="https://github.com/passulo/Passulo-Server">Server</a></li>
+                        <li><a class="dropdown-item" href="https://github.com/passulo/Token">Token</a></li>
+                        <li><a class="dropdown-item" href="https://github.com/passulo/Passulo-iOS">iOS App</a></li>
+                    </ul>
                 </li>
                 <li class="nav-item me-2 dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -76,19 +85,95 @@
         <div class="col-lg-6">
             <img class="d-grid gap-2 mb-3 d-md-flex justify-content-md-start logo" src="/logo.png" alt="Logo" width="150" height="150">
             <h1 class="display-5 fw-bold lh-1 mb-2">Passulo</h1>
-            <p class="lead">Einfach, sicher, datensparsam.</p>
-            <div class="d-grid gap-2 mt-5 d-md-flex justify-content-md-start">
-                <a href="https://testflight.apple.com/join/pvKITed6">
-                    <img src="https://www.passulo.com/images/appstore.de.svg" alt="Download on the App Store">
-                </a>
-            </div>
+            <h3 class="lead lh-1 mt-2"><p>Digitale Mitgliedsausweise</p>
+
+<p><span class="iconify-inline" data-icon="ic:outline-privacy-tip" style="color: green;"></span>   ohne persönliche Daten herauszugeben</p>
+
+<p><span class="iconify-inline" data-icon="ic:outline-verified" style="color: green;"></span>   fälschungssicher &amp; verifizierbar</p>
+
+<p><span class="iconify-inline" data-icon="ic:twotone-phonelink-erase" style="color: green;"></span>   ohne App nutzbar</p>
+
+<p><span class="iconify-inline" data-icon="icon-park-outline:pull-requests" style="color: green;"></span>   kostenlos &amp; open-source</p>
+
+<p><span class="iconify-inline" data-icon="ic:outline-extension" style="color: green;"></span>   offen &amp; integrierbar</p>
+</h3>
         </div>
     </div>
 </div>
 
-<div class="container px-4 py-5 bg-secondary" id="featured-3">
-    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
-        </div>
+<div class="container col-xxl-8 px-4 py-5">
+    <div class="align-items-center g-5 py-5"><div class="card mb-5">
+            <div class="card-body">
+                <h5 class="card-title"><span class="iconify-inline" data-icon="ic:outline-privacy-tip" style="color: green;"></span>&nbsp;&nbsp; Persönliche Daten bleiben beim Verband</h5>
+                <p class="card-text"><p>Mitgliedsausweise enthalten Namen, E-Mail-Adresse, Telefonnummer und weitere persönliche Daten.
+Ohne Einverständnis der Mitglieder dürfen diese nicht einfach an externe Dienstleister gegeben werden.</p>
+
+<p>Passulo erstellt Ausweise lokal, auf dem Computer des Verbands.
+Der Verband schickt sie selbst (zum Beispiel per E-Mail) an seine Mitglieder.</p>
+
+<p>Auf dem Passulo-Server wird (optional) nur eine ID gespeichert, über die Ausweise deaktiviert werden können.</p>
+
+<p><a class="btn btn-outline-primary" href="/architecture" role="button" target="_blank">
+<span class="iconify-inline" data-icon="ic:outline-integration-instructions"></span> Zur Architektur</a></p>
+</p>
+
+            </div>
+        </div><div class="card mb-5">
+            <div class="card-body">
+                <h5 class="card-title"><span class="iconify-inline" data-icon="ic:outline-verified" style="color: green;"></span>&nbsp;&nbsp; Fälschungssicher &amp; Verifizierbar</h5>
+                <p class="card-text"><p>Beim Erstellen der Ausweise werden Name, Mitgliedsnummer, Verband und Status <strong>signiert</strong> in den QR-Code geschrieben.
+Dieser enthält außerdem die URL zu einem Passulo-Server, auf dem der öffentliche Schlüssel des Verbands liegt.</p>
+
+<p>Beim Auslesen der Daten wird der öffentliche Schlüssel vom Server geladen und die Daten damit verifiziert.</p>
+
+<p>Die Signatur nutzt Public-Key-Kryptografie mit EdDSA-Signaturen.</p>
+
+<p><a class="btn btn-outline-primary" href="/spec" role="button" target="_blank">
+<span class="iconify-inline" data-icon="ic:outline-file-copy"></span> Zur Spezifikation</a></p>
+</p>
+
+            </div>
+        </div><div class="card mb-5">
+            <div class="card-body">
+                <h5 class="card-title"><span class="iconify-inline" data-icon="ic:twotone-phonelink-erase" style="color: green;"></span>&nbsp;&nbsp; Auch ohne App nutzbar</h5>
+                <p class="card-text"><p>Die QR-Codes enthalten eine URL, die von jedem Smartphone gelesen und geöffnet werden kann. 
+Sie führt auf einen Passulo-Server (entweder app.passulo.com oder selbst gehostet), der den Rest des Codes ausliest,
+verifiziert und anzeigt.</p>
+
+<p>Ist auf dem Smartphone die Passulo-App installiert, wird der Link direkt in der App geöffnet und lokal auf dem Gerät 
+entschlüsselt und verifiziert.</p>
+
+<p>Die iOS-App ist aktuell als TestFlight-Vorab-Version verfügbar:</p>
+
+<p><a class="btn btn-outline-primary" href="https://testflight.apple.com/join/pvKITed6" role="button" target="_blank">
+<span class="iconify-inline" data-icon="simple-icons:appstore"></span> TestFlight-Version Laden</a></p>
+</p>
+
+            </div>
+        </div><div class="card mb-5">
+            <div class="card-body">
+                <h5 class="card-title"><span class="iconify-inline" data-icon="icon-park-outline:pull-requests" style="color: green;"></span>&nbsp;&nbsp; Kostenlos &amp; Open-Source</h5>
+                <p class="card-text"><p>Alle Teile der Software — der PassCreator, der Passulo-Server und die iOS-App — sind open-source und können kostenlos eingesetzt werden.
+So kann jeder die Datenschutz-Versprechen überprüfen, die Software auf seine Bedürfnisse anpassen oder die Server-Komponente selbst betreiben.</p>
+
+<p>Die einzige Bedingung ist, das Format des QR-Codes beizubehalten, damit verschiedene Passulo-Apps untereinander kompatibel bleiben.</p>
+
+<p><a class="btn btn-outline-primary" href="https://github.com/passulo" role="button" target="_blank">
+<span class="iconify-inline" data-icon="bi:github"></span> Code auf GitHub öffnen</a></p>
+</p>
+
+            </div>
+        </div><div class="card mb-5">
+            <div class="card-body">
+                <h5 class="card-title"><span class="iconify-inline" data-icon="ic:outline-extension" style="color: green;"></span>&nbsp;&nbsp; Offen &amp; Integrierbar</h5>
+                <p class="card-text"><p>Passulo ist darauf ausgelegt, erweitert und integriert zu werden — zum Beispiel in eigene Scanner-Apps.</p>
+
+<p><a class="btn btn-outline-primary" href="/spec" role="button" target="_blank">
+<span class="iconify-inline" data-icon="ic:outline-file-copy"></span> Zur Spezifikation</a></p>
+</p>
+
+            </div>
+        </div></div>
 </div><div class="container">
   <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
     <div class="col-md-4 d-flex align-items-center">
@@ -109,6 +194,7 @@
         crossorigin="anonymous"></script>
 <script>
   anchors.add('.card h5');
+  anchors.add('.markdowntext h2');
 </script></body>
 
 </html>

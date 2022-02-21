@@ -14,16 +14,24 @@
                     <a class="nav-link {% if page.menu == "home" %} active {% endif %}" aria-current="page" href="/">{{ site.menu["home"][site.active_lang] }}</a>
                 </li>
                 <li class="nav-item me-2">
-                    <a class="nav-link {% if page.menu == "changelog" %} active {% endif %}" href="/changelog/">{{ site.menu["changes"][site.active_lang] }}</a>
+                    <a class="nav-link {% if page.menu == "architecture" %} active {% endif %}" href="/architecture/">{{ site.menu["architecture"][site.active_lang] }}</a>
                 </li>
                 <li class="nav-item me-2">
-                    <a class="nav-link {% if page.menu == "privacy" %} active {% endif %}" href="/privacy/">{{ site.menu["privacy"][site.active_lang] }}</a>
+                    <a class="nav-link {% if page.menu == "spec" %} active {% endif %}" href="/spec/">{{ site.menu["spec"][site.active_lang] }}</a>
                 </li>
                 <li class="nav-item me-2">
                     <a class="nav-link {% if page.menu == "faq" %} active {% endif %}" href="/faq/">{{ site.menu["faq"][site.active_lang] }}</a>
                 </li>
-                <li class="nav-item me-2">
-                    <a class="nav-link" href="{{site.appstore}}">{{ site.menu["download"][site.active_lang] }}</a>
+                <li class="nav-item me-2 dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink2" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <span class="iconify-inline" data-icon="ic:outline-apps"></span> {{ site.menu["software"][site.active_lang] }}
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink2">
+                        <li><a class="dropdown-item" href="https://github.com/passulo/PassCreator">PassCreator</a></li>
+                        <li><a class="dropdown-item" href="https://github.com/passulo/Passulo-Server">Server</a></li>
+                        <li><a class="dropdown-item" href="https://github.com/passulo/Token">Token</a></li>
+                        <li><a class="dropdown-item" href="https://github.com/passulo/Passulo-iOS">iOS App</a></li>
+                    </ul>
                 </li>
                 <li class="nav-item me-2 dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">

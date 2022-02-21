@@ -3,8 +3,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta http-equiv="Content-Language" content="en">
-<link rel="alternate" hreflang="de" href="https://www.passulo.com/changelog/"/>
-<link rel="alternate" hreflang="en" href="https://www.passulo.com/en/changelog/"/>
+<link rel="alternate" hreflang="de" href="https://www.passulo.com/architecture/"/>
+<link rel="alternate" hreflang="en" href="https://www.passulo.com/en/architecture/"/>
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Passulo</title>
@@ -45,7 +45,7 @@
                     <a class="nav-link " aria-current="page" href="/en/">Home</a>
                 </li>
                 <li class="nav-item me-2">
-                    <a class="nav-link " href="/en/architecture/">Architecture</a>
+                    <a class="nav-link  active " href="/en/architecture/">Architecture</a>
                 </li>
                 <li class="nav-item me-2">
                     <a class="nav-link " href="/en/spec/">Specification</a>
@@ -69,24 +69,104 @@
                         <i class="bi-globe"></i> 
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <li><a class="dropdown-item" href="/changelog/">Deutsch</a></li>
-                        <li><a class="dropdown-item" href="/en/changelog/">English</a></li>
+                        <li><a class="dropdown-item" href="/architecture/">Deutsch</a></li>
+                        <li><a class="dropdown-item" href="/en/architecture/">English</a></li>
                     </ul>
                 </li>
             </ul>
         </div>
     </div>
 </nav><div class="container col-xxl-8 px-4 py-5">
-    <div class="align-items-center g-5 py-5"><div class="card mb-5">
-            <div class="card-body">
-                <h5 class="card-title">Version 5.1</h5><h6 class="card-subtitle mb-2 text-muted">Feb 9, 2022</h6>
+    <div class="align-items-center g-5 py-5 markdowntext">
+        <h1 id="architektur">Architektur</h1>
 
-                <p class="card-text"><p>This version contains small fixes for the import sheet, address search and year-recognition.</p>
-</p>
+<p>Passulo besteht aus mehreren Software-Komponenten.</p>
 
-            </div>
-        </div></div>
-</div><div class="container">
+<h2 id="passcreator">PassCreator</h2>
+
+<p>Der PassCreator ist eine Anwendung die eine CSV-Datei mit Mitgliederdaten liest und für jedes Mitglied einen Apple Wallet Pass (<code class="language-plaintext highlighter-rouge">pkpass</code>) erstellt.</p>
+
+<p>Benötigt werden hierfür:</p>
+
+<ol>
+  <li>
+    <p><strong>Ein Private/Public Keypair basierend auf Ed25519</strong></p>
+
+    <p>Dies kann mit <code class="language-plaintext highlighter-rouge">openssl</code> erstellt werden:</p>
+
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>openssl genpkey <span class="nt">-algorithm</span> ed25519 <span class="nt">-outform</span> PEM <span class="nt">-out</span> private.pem
+<span class="nv">$ </span>openssl pkey <span class="nt">-in</span> private.pem <span class="nt">-pubout</span> <span class="nt">-out</span> public.pem
+</code></pre></div>    </div>
+
+    <p>Die Dateien sehen wie folgt aus:</p>
+
+    <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-----BEGIN PRIVATE KEY-----
+MC4CAQAwBQYDK2VwBCIEIE+Yg8vj7GtRUe8pzkarIn6Uvbktu1INR58hCasc9202
+-----END PRIVATE KEY-----
+</code></pre></div>    </div>
+
+    <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-----BEGIN PUBLIC KEY-----
+MCowBQYDK2VwAyEAJLJnj3rUwrTk3lhbc9uPxUlhivbtX8Op71cDcza1HWI=
+-----END PUBLIC KEY-----
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p><strong>Der Public Key muss beim Passulo Server registriert werden.</strong></p>
+
+    <p>Dies ist ein manueller Prozess, da der Betreiber des Servers verifizieren muss, 
+dass der Ersteller des Schlüssels befugt ist, Ausweise für seine Organisation auszustellen.</p>
+  </li>
+  <li>
+    <p><strong>Ein <code class="language-plaintext highlighter-rouge">Pass Type ID Certificate</code> von Apple</strong></p>
+
+    <p>Hierfür ist ein Apple-Developer-Account nötig.</p>
+
+    <p>Zunächst muss ein “identifier” erstellt werden: https://developer.apple.com/account/resources/identifiers/list/passTypeId.</p>
+
+    <p>Danach kann hier ein Zertifikat beantragt werden: https://developer.apple.com/account/resources/certificates/add.</p>
+  </li>
+  <li>
+    <p><strong>Das Apple WWDR CA G4 Zertifikat</strong></p>
+
+    <p>Dies kann auf https://www.apple.com/certificateauthority/AppleWWDRCAG4.cer heruntergeladen werden.</p>
+  </li>
+  <li>
+    <p><strong>Logo, Icon und Stip-Images</strong></p>
+
+    <p>In einem <code class="language-plaintext highlighter-rouge">template</code>-Ordner müssen <code class="language-plaintext highlighter-rouge">logo.png</code>, <code class="language-plaintext highlighter-rouge">icon.png</code> und optional <code class="language-plaintext highlighter-rouge">strip.png</code> gespeichert werden. 
+Diese sollten auch als <code class="language-plaintext highlighter-rouge">@2x</code> und <code class="language-plaintext highlighter-rouge">@3x</code>-Varianten verfügbar sein.
+Die Dimensionen (für die einfache Variante) betragen:</p>
+
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">logo.png</code> 160 x 50 points (wird vorne auf dem Pass angezeigt)</li>
+      <li><code class="language-plaintext highlighter-rouge">icon.png</code> 29 x 29 points (wird z.B. in Notifications angezeigt)</li>
+      <li><code class="language-plaintext highlighter-rouge">strip.png</code> 375 x 123 points (Hintergrundbild)</li>
+    </ul>
+
+    <p>Beispiele finden sich in https://github.com/passulo/PassCreator/tree/main/template.
+Weitere Erklärungen findet man auf https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/PassKit_PG/Creating.html.</p>
+  </li>
+  <li>
+    <p><strong>Eine Konfigurations-Datei</strong></p>
+
+    <p>siehe https://github.com/passulo/PassCreator/blob/main/src/main/resources/passulo.conf</p>
+  </li>
+  <li>
+    <p><strong>Eine CSV-Datei mit den Mitgliederdaten</strong></p>
+
+    <p>zum Beispiel https://github.com/passulo/PassCreator/blob/main/src/main/resources/members.csv</p>
+  </li>
+</ol>
+
+<p>PassCreator erstellt für jeden Eintrag in den Mitgliederdaten eine Datei mit dem Namen <code class="language-plaintext highlighter-rouge">&lt;mitgliedsnummer&gt;-&lt;name&gt;.pkpass</code>. 
+Diese kann auf jedem Mac, iPhone oder iPad oder auf Android-Geräten mit der <a href="https://play.google.com/store/apps/details?id=io.walletpasses.android">WalletPasses</a> App geöffnet werden.</p>
+
+
+    </div>
+</div>
+
+
+<div class="container">
   <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
     <div class="col-md-4 d-flex align-items-center">
       <a href="https://oma.jannikarndt.de" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">

@@ -2,7 +2,18 @@ hero:
   de:
     image: pass.png
     title: Passulo
-    subtitle: Einfach, sicher, datensparsam.
+    subtitle: |
+      Digitale Mitgliedsausweise
+      
+      <span class="iconify-inline" data-icon="ic:outline-privacy-tip" style="color: green;"></span>&nbsp;&nbsp; ohne persönliche Daten herauszugeben 
+      
+      <span class="iconify-inline" data-icon="ic:outline-verified" style="color: green;"></span>&nbsp;&nbsp; fälschungssicher & verifizierbar 
+      
+      <span class="iconify-inline" data-icon="ic:twotone-phonelink-erase" style="color: green;"></span>&nbsp;&nbsp; ohne App nutzbar 
+      
+      <span class="iconify-inline" data-icon="icon-park-outline:pull-requests" style="color: green;"></span>&nbsp;&nbsp; kostenlos & open-source 
+
+      <span class="iconify-inline" data-icon="ic:outline-extension" style="color: green;"></span>&nbsp;&nbsp; offen & integrierbar
   en:
     image: pass.png
     title: Passulo

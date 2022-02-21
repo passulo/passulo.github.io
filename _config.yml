@@ -19,23 +19,27 @@ highlighter: rouge
 collections:
   - changelog
   - faq
+  - explainers
 
 menu:
   home:
     de: Home
     en: Home
-#  changes:
-#    de: Neuerungen
-#    en: Change Log
-#  privacy:
-#    de: Datenschutz
-#    en: Privacy
-#  faq:
-#    de: Fragen & Antworten
-#    en: FAQ
+  architecture:
+    de: Architektur
+    en: Architecture
+  spec:
+    de: Spezifikation
+    en: Specification
+  faq:
+    de: Fragen & Antworten
+    en: FAQ
   download:
     de: Download
     en: Download
+  software:
+    de: Software
+    en: Software
 #  language:
 #    de: Deutsch
 #    en: English
