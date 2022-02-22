@@ -80,15 +80,15 @@
     <div class="align-items-center g-5 py-5 markdowntext">
         <h1 id="spezifikation-des-qr-codes">Spezifikation des QR-Codes</h1>
 
-<p>Der QR-Code ist eine ISO 8859-1-codierte URL, die auf eine Instanz des Passulo-Servers zeigt und einen Code, eine Signatur und eine Key-ID als Query-Parameter enthält:</p>
+<p>Der QR-Code ist eine ISO 8859-1-codierte URL, die auf eine Instanz des Passulo-Servers zeigt und einen Code, eine Version, eine Signatur und eine Key-ID als Query-Parameter enthält:</p>
 
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>https://app.passulo.com/?code<span class="o">=</span>&lt;token&gt;&amp;sig<span class="o">=</span>&lt;signature&gt;&amp;kid<span class="o">=</span>&lt;keyid&gt;
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>https://app.passulo.com/?code<span class="o">=</span>&lt;token&gt;&amp;v<span class="o">=</span>1&amp;sig<span class="o">=</span>&lt;signature&gt;&amp;kid<span class="o">=</span>&lt;keyid&gt;
 </code></pre></div></div>
 
 <h3 id="token">Token</h3>
 
 <p>Der Token eine <code class="language-plaintext highlighter-rouge">base64url</code> (nach <a href="https://en.wikipedia.org/wiki/Base64#The_URL_applications">RFC 4648</a>) codierte, binäre repräsentation einer Protobuf-Nachricht.
-Die Protobuf-Definition befindet sich in https://github.com/passulo/Token, zusammen mit Bindings für C++, Java, JavaScript, Kotlin, Objective C, PHP, Python, Ruby, Scala und Swift.</p>
+Die Protobuf-Definition befindet sich in <a href="https://github.com/passulo/Token">github.com/passulo/Token</a>, zusammen mit Bindings für C++, Java, JavaScript, Kotlin, Objective C, PHP, Python, Ruby, Scala und Swift.</p>
 
 <p>Über die Kommandozeilen-Befehle <code class="language-plaintext highlighter-rouge">basenc</code> und <code class="language-plaintext highlighter-rouge">protoc</code> können Token untersucht werden:</p>
 
@@ -120,6 +120,10 @@ Während QR-Code <em>theoretisch</em> bis zu 2953 Bytes speichern können, ist d
 Hinzu kommt, dass der Code i.d.R. auf einem Handy-Display angezeigt wird und also nicht sehr groß ist.
 Es ist deshalb darauf zu achten, die Gesamtgröße des Tokens nicht unnötig aufzublähen.</p>
 </blockquote>
+
+<h3 id="version">Version</h3>
+
+<p>Der <code class="language-plaintext highlighter-rouge">v</code> Parameter ist die Version des Tokens.</p>
 
 <h3 id="signatur">Signatur</h3>
 
