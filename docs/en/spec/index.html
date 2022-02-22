@@ -92,14 +92,15 @@ Die Protobuf-Definition befindet sich in <a href="https://github.com/passulo/Tok
 
 <p>Über die Kommandozeilen-Befehle <code class="language-plaintext highlighter-rouge">basenc</code> und <code class="language-plaintext highlighter-rouge">protoc</code> können Token untersucht werden:</p>
 
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>CiQ2MDViZWQyMy03ODJkLTRhMmItYTFjYy1mZWQwMDYzMzRjNTkSBVRhbmphIgVMYW5nZSoBZjIGNDMyMzI0OgRHb2xkQiFUZWNobmlzY2hlIFVuaXZlcnNpdGVpdCBFaW5kaG92ZW5KEmxhbmdlQGVpbmRob3Zlbi5ubFITKzMxICgwKSA0MCAyNDcgNDc2NFoMSGFtYnVyZ0BXb3JrYgYI_5nDnQZqBgj_q4DkAw==
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>CgpxRmZSOFdxTEE4EgVUYW5qYSIFTGFuZ2UoATIGNDMyMzI0OgRHb2xkQiFUZWNobmlzY2hlIFVuaXZlcnNpdGVpdCBFaW5kaG92ZW5KEmxhbmdlQGVpbmRob3Zlbi5ubFITKzMxICgwKSA0MCAyNDcgNDc2NFoMSGFtYnVyZ0BXb3JrYgYI_5nDnQZqBgiAkb_SAw==
 </code></pre></div></div>
 
 <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cat </span>token.txt | basenc <span class="nt">--base64url</span> <span class="nt">--decode</span> | protoc <span class="nt">--decode</span> com.passulo.v1.Token com/passulo/token.proto
-<span class="nb">id</span>: <span class="s2">"605bed23-782d-4a2b-a1cc-fed006334c59"</span>
+<span class="nb">id</span>: <span class="s2">"qFfR8WqLA8"</span>
 firstName: <span class="s2">"Tanja"</span>
+middleName: <span class="s2">""</span>
 lastName: <span class="s2">"Lange"</span>
-gender: <span class="s2">"f"</span>
+gender: female
 number: <span class="s2">"432324"</span>
 status: <span class="s2">"Gold"</span>
 company: <span class="s2">"Technische Universiteit Eindhoven"</span>
@@ -107,10 +108,10 @@ email: <span class="s2">"lange@eindhoven.nl"</span>
 telephone: <span class="s2">"+31 (0) 40 247 4764"</span>
 association: <span class="s2">"Hamburg@Work"</span>
 validUntil <span class="o">{</span>
-  seconds: 1672531199
+seconds: 1672531199
 <span class="o">}</span>
 memberSince <span class="o">{</span>
-  seconds: 1015027199
+seconds: 978307200
 <span class="o">}</span>
 </code></pre></div></div>
 
