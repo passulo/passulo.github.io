@@ -1,6 +1,5 @@
 hero:
   de:
-    image: pass.png
     title: Passulo
     subtitle: |
       Digitale Mitgliedsausweise
@@ -15,6 +14,5 @@ hero:
 
       <span class="iconify-inline" data-icon="ic:outline-extension" style="color: green;"></span>&nbsp;&nbsp; offen & integrierbar
   en:
-    image: pass.png
     title: Passulo
     subtitle: Simple, secure, privacy-friendly.
