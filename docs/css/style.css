@@ -4,12 +4,17 @@
     --bs-body-bg: rgb(238, 246, 254);
 }
 
+pre.highlight {
+    margin: 10px 10px 30px;
+    padding: 15px;
+    background-color: ivory;
+}
 
 @media (prefers-color-scheme: dark) {
 
     body {
         background-color: rgb(2, 44, 87);
-        color: rgb(238, 246, 254);
+        color: rgb(185, 194, 203);
     }
 
     .card {
@@ -22,6 +27,10 @@
 
     .navbar-light .navbar-nav .nav-link, .navbar-light .navbar-brand {
         color: rgb(238, 246, 254);
+    }
+
+    pre.highlight {
+        background-color: rgb(33, 72, 112);
     }
 }
 
@@ -40,11 +49,7 @@ blockquote {
     color: gray;
 }
 
-pre.highlight {
-    margin: 10px 10px 30px;
-    padding: 15px;
-    background-color: ivory;
-}
+
 
 /* Image slideshow from https://www.devtwins.com/blog/css-cross-fading-images */
 .screenshot {
