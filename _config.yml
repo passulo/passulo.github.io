@@ -25,6 +25,9 @@ menu:
   home:
     de: Home
     en: Home
+  examples:
+    de: Beispiele
+    en: Examples
   architecture:
     de: Architektur
     en: Architecture
