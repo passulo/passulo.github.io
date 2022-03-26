@@ -2,7 +2,7 @@ url: "https://www.passulo.com" # for robots, sitemap
 baseurl: ""
 name: "Passulo"
 destination: docs/
-appstore: https://testflight.apple.com/join/pvKITed6
+appstore: https://apps.apple.com/app/passulo/id1610341734
 
 plugins:
   - jekyll-sitemap

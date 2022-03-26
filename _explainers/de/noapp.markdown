@@ -12,7 +12,5 @@ verifiziert und anzeigt.
 Ist auf dem Smartphone die Passulo-App installiert, wird der Link direkt in der App geöffnet und lokal auf dem Gerät 
 entschlüsselt und verifiziert.
 
-Die iOS-App ist aktuell als TestFlight-Vorab-Version verfügbar: 
-
-<a class="btn btn-outline-primary" href="https://testflight.apple.com/join/pvKITed6" role="button" target="_blank">
-<span class="iconify-inline" data-icon="simple-icons:appstore"></span> TestFlight-Version Laden</a>
+<a class="btn btn-outline-primary" href="https://apps.apple.com/app/passulo/id1610341734" role="button" target="_blank">
+<span class="iconify-inline" data-icon="simple-icons:appstore"></span> Passulo für iOS laden</a>
